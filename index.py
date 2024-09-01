@@ -3,6 +3,7 @@ import requests
 from dotenv import load_dotenv
 import os
 from sendemail import send_email
+from sendsms import sendSms
 import psycopg2
 import datetime
 
@@ -52,6 +53,9 @@ else:
     #SEND EMAIL
     receiver_emails=os.getenv("RECEIVER_EMAIL")
     send_email("Item back in stock",f"The item is back in stock.Kindly checkout {url}",receiver_emails)
-    # print('In stock')
+
+    #SEND SMS
+    sendSms()
+    
 
 
