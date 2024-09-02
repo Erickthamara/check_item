@@ -41,7 +41,6 @@ if target_text =="Currently Out Of Stock":
         pass
 
 else:
-
     date_time=datetime.datetime.now()
     #INSERT THE FAILED TRANSACTION
     try:
