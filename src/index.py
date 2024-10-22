@@ -2,11 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 from dotenv import load_dotenv
 import os
-from sendemail import send_email
-from sendsms import sendSms
+from utils.sendemail import send_email
+from utils.sendsms import sendSms
 import psycopg2
 import datetime
-
 
 
 # Load environment variables from .env file
@@ -18,7 +17,7 @@ url = os.getenv("TARGET_URL")
 response=requests.get(url)
 soup = BeautifulSoup(response.text, "lxml")
 
-# Target the specidic class
+# Target the specific class
 target_text=soup.find(class_="product-usps-text").text
 
 #Insert record to database
